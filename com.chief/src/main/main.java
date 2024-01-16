@@ -8,11 +8,14 @@ public class main {
 
         List<Integer> nums = Arrays.asList(1, 3, 4, 5, 6, 7, 78, 9, 7, 6);
 
-        nums.stream()
+       int result= nums.stream()
                 .filter(n -> n % 2 == 1) // filter to get odd numbers
                 .map(n -> n * 2)
                 .sorted()
-                .forEach(n -> System.out.println(n));
+                .reduce(0,(c,e) -> c+e);
+                // .forEach(n -> System.out.println(n));
+
+                System.out.println(result);
 
     }
 }
